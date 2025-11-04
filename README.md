@@ -57,7 +57,7 @@ python -m spacy download en_core_web_sm
 ```
 
 **Requires:** CUDA-capable GPU, CUDA 12.x, 8GB+ VRAM recommended
-**Benefit:** 2.1x more triplets with GPU-accelerated BFS
+**Benefit:** ~1.9x more triplets with GPU-accelerated BFS (vs default Balanced mode)
 
 **Base install (CPU-optimized):**
 
@@ -148,6 +148,8 @@ extractor = OpenIEExtractor(speed_preset="ultra")   # 28.22/s, minimal triplets
 
 **†Coverage:** Percentage of Deep Search triplets found (Deep Search finds the most = 100% baseline)
 
+**Note:** Stanford OpenIE benchmarks executed via [stanford-openie-python](https://github.com/philipperemy/stanford-openie-python) package. Numbers vary slightly between runs.
+
 **Benchmark Hardware:**
 - **GPU tests:** NVIDIA RTX 5090 (32GB VRAM), CUDA 12.x
 - **CPU tests:** AMD Ryzen 7 9800X3D (8-Core, 16 threads), 48GB RAM
@@ -158,7 +160,7 @@ extractor = OpenIEExtractor(speed_preset="ultra")   # 28.22/s, minimal triplets
 #### GPU-Accelerated
 *Workstations, GPU servers, batch processing pipelines*
 
-BFS mode with CUDA acceleration - **2.1x more triplets:**
+BFS mode with CUDA acceleration - **~1.9x more triplets vs default Balanced mode:**
 
 | Mode | Configuration | Hardware | Use Case |
 |------|--------------|----------|----------|
